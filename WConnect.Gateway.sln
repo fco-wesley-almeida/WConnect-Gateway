@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WConnect.Gateway", "WConnect.Gateway\WConnect.Gateway.csproj", "{CC5EC7DB-4A27-479E-949E-E4721BC272CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC5EC7DB-4A27-479E-949E-E4721BC272CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC5EC7DB-4A27-479E-949E-E4721BC272CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC5EC7DB-4A27-479E-949E-E4721BC272CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC5EC7DB-4A27-479E-949E-E4721BC272CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

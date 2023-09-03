@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "F1+P6tEvYmhSuC/tx8pb99X6e7/VUOa0QPQvx8xFKpE=",
+  "Source": "WConnect.Gateway",
+  "BasePath": "_content/WConnect.Gateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
