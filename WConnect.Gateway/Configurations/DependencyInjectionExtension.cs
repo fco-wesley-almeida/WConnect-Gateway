@@ -11,8 +11,12 @@ public static class DependencyInjectionExtension
 {
    public static void AddDependencyInjection(this IServiceCollection services)
    {
-      var factory = new GrpcChannelFactory();
-      services.AddSingleton<GrpcChannel>(_ => factory.Auth());
+      ServiceProvider serviceProvider = services.BuildServiceProvider();
+      IConfiguration configuration = serviceProvider.GetService<IConfiguration>()!;
+      var grpcChannelFactory = new GrpcChannelFactory(configuration);
+      
+      services.AddSingleton<GrpcChannel>(_ => grpcChannelFactory.Auth());
+      
       services.AddScoped<IAuthRepository, AuthRepository>();
       services.AddScoped<IAuthenticationService, AuthenticationService>();
    }
