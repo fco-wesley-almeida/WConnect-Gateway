@@ -1,5 +1,6 @@
 using Google.Protobuf;
 using Grpc.Net.Client;
+using WConnect.Gateway.GrpcChannels;
 using WConnect.Gateway.Models;
 using WConnect.Gateway.Repositories.Interfaces;
 using static WConnect.Gateway.SignIn;
@@ -7,13 +8,13 @@ using static WConnect.Gateway.SignUp;
 
 namespace WConnect.Gateway.Repositories;
 
-public class AuthRepository: IAuthRepository
+public class AuthenticationRepository: IAuthenticationRepository
 {
     private readonly GrpcChannel _channel;
 
-    public AuthRepository(GrpcChannel channel)
+    public AuthenticationRepository(IAuthGrpcChannel authGrpcChannel)
     {
-        _channel = channel;
+        _channel = authGrpcChannel.GrpcChannel;
     }
 
     public async Task<SignUpGrpcResponse> SignUpAsync(SignUpGrpcRequest request)

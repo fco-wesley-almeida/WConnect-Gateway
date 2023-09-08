@@ -7,11 +7,11 @@ namespace WConnect.Gateway.Services;
 
 public class AuthenticationService: IAuthenticationService
 {
-    private readonly IAuthRepository _authRepository;
+    private readonly IAuthenticationRepository _authenticationRepository;
 
-    public AuthenticationService(IAuthRepository authRepository)
+    public AuthenticationService(IAuthenticationRepository authenticationRepository)
     {
-        _authRepository = authRepository;
+        _authenticationRepository = authenticationRepository;
     }
 
     public async Task<SignUpResponse> SignUpAsync(SignUpRequest request)
@@ -19,7 +19,7 @@ public class AuthenticationService: IAuthenticationService
         var grpcRequest = request.AsGrpc();
         try
         {
-            var response = await _authRepository.SignUpAsync(grpcRequest);
+            var response = await _authenticationRepository.SignUpAsync(grpcRequest);
             return new()
             {
                 Id = response.Id
@@ -36,7 +36,7 @@ public class AuthenticationService: IAuthenticationService
         var grpcRequest = request.AsGrpc();
         try
         {
-            var response = await _authRepository.SignInAsync(grpcRequest);
+            var response = await _authenticationRepository.SignInAsync(grpcRequest);
             return new(response);
         }
         catch (RpcException e)

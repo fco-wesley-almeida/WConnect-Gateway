@@ -21,4 +21,9 @@ public class AuthenticationController : ControllerBase
     [HttpPost("Sign-Up")]
     public async Task<ActionResult<SignUpResponse>> SignUpAsync(SignUpRequest request) 
         => Ok(await _authenticationService.SignUpAsync(request));
+    
+    [AllowAnonymous]
+    [HttpPost("Sign-In")]
+    public async Task<ActionResult<SignInResponse>> SignInAsync(SignInRequest request) 
+        => Ok(await _authenticationService.SignInAsync(request));
 }

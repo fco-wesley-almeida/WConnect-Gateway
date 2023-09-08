@@ -1,8 +1,9 @@
 using Grpc.Net.Client;
+using WConnect.Gateway.GrpcChannels;
 
 namespace WConnect.Gateway;
 
-public class GrpcChannelFactory
+public class GrpcChannelFactory: IGrpcChannelFactory
 {
     private readonly IConfiguration _configuration;
 
