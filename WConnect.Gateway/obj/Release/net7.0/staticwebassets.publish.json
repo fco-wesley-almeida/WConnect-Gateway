@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "HSnS6OejA2NaPoQmHnqMa3+LO7Y87EC1i5lusV5AmpY=",
+  "Source": "WConnect.Gateway",
+  "BasePath": "_content/WConnect.Gateway",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

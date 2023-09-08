@@ -30,4 +30,18 @@ public class AuthenticationService: IAuthenticationService
             throw new BadHttpRequestException(e.Status.Detail, StatusCodes.Status400BadRequest);
         }
     }
+
+    public async Task<SignInResponse> SignInAsync(SignInRequest request)
+    {
+        var grpcRequest = request.AsGrpc();
+        try
+        {
+            var response = await _authRepository.SignInAsync(grpcRequest);
+            return new(response);
+        }
+        catch (RpcException e)
+        {
+            throw new BadHttpRequestException(e.Status.Detail, StatusCodes.Status401Unauthorized);
+        }
+    }
 }
